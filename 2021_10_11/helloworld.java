@@ -47,3 +47,20 @@ public class helloworld{  //注意通常一个类一个源文件
  * 4.
  * ...
  */
+
+public class helloworld{
+	public static void main(String[] args) {
+		/**
+		 * 这是一个文档注释！
+		 * 一般放于类或者方法前面，说明类或者方法的作用。
+		 * 1.
+		 * 2.
+		 * 3.
+		 * 4.
+		 * ...
+		 */
+
+		System.out.println("这时一个测试");
+		
+	}
+}
