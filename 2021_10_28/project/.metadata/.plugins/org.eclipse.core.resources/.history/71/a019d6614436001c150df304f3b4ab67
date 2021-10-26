@@ -1,0 +1,8 @@
+package myproject;
+
+public class CannotFromATriangleException extends RuntimeException {
+
+	public CannotFromATriangleException(String arg0) {
+		super(arg0);
+	}
+}

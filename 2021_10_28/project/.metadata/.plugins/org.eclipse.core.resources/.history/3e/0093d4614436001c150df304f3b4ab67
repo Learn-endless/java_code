@@ -1,0 +1,9 @@
+package myproject;
+
+public class InvalidSideLengthException extends RuntimeException{
+
+	public InvalidSideLengthException(String arg0) {
+		super(arg0);
+	}
+
+}

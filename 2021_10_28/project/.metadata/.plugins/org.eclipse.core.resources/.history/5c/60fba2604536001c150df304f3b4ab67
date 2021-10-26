@@ -1,0 +1,22 @@
+package testproject;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+
+import myproject.Triangle;
+
+public class TestTriangle {
+	Triangle triangle = new Triangle(2,2,2);
+	@Test
+	public void testTriangleType() {
+		String result = triangle.judgmentType();
+		assertEquals("µÈ±ßÈý½ÇÐÎ",result);
+	}
+	
+	@Test
+	public void testTriangleGirth() {
+		int result = triangle.girth();
+		assertEquals(6,result);
+	}
+}
