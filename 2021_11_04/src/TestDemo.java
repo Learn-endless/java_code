@@ -4,6 +4,9 @@
  * User:  19833
  * Date:  2021-10-31
  * Time:  15:12
+ *
+ * 序列化：将对象转化成字符串
+ * 反序列化：将字符串转化为对象
  */
 //类：对有相同特性和行为的事物的统称，是一种抽象概念
 //这里将人抽象成一个类——Person
@@ -29,7 +32,7 @@ class Person{
          */
         this.age = 199;
         count = 50;
-        System.out.println("这是一个实例代码块！！！！");
+        System.out.println("这是一个实例代码块(构造代码块)！！！！");
     }
 
     static{
@@ -134,6 +137,11 @@ class Person{
 public class TestDemo {
 
     public static void main(String[] args) {
+        new Person().eat();  //匿名对象 —— 只能在创建时使用一次
+        System.out.println(new Person().age);
+    }
+
+    public static void main_6(String[] args) {
         Person person = new Person();
         System.out.println(Person.count);
 //        System.out.println(person.age);
