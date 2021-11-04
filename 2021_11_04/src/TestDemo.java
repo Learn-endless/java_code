@@ -57,17 +57,17 @@ class Person{
 
     //不带参数的构造方法
     public Person(){
-//        /**
-//         * this有三种用法：
-//         * 1.this.data         调用当前对象的属性
-//         * 2.this.func()       调用当前对象的方法
-//         * 3.this()            调用当前对象的其他构造方法
-//         */
-//        this("world"); //注意：对“this（）”的调用必须是构造函数体中的第一条语句，并且它只能放到构造方法里面
-//
-//        this.name = "bit";
-//        this.age = 22;
-//        System.out.println("名字："+name+" 年龄:"+age);
+        /**
+         * this有三种用法：
+         * 1.this.data         调用当前对象的属性
+         * 2.this.func()       调用当前对象的方法
+         * 3.this()            调用当前对象的其他构造方法
+         */
+     this("world"); //注意：对“this（）”的调用必须是构造函数体中的第一条语句，并且它只能放到构造方法里面
+
+        this.name = "bit";
+        this.age = 22;
+        System.out.println("名字："+name+" 年龄:"+age);
     }
 
     //重载+带一个参数的构造方法
