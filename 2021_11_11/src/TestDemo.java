@@ -16,6 +16,8 @@ public class TestDemo {
         myLinkedList.clear();
         System.out.println();
     }
+
+
     public static void main_2(String[] args) {
         MyLinkedList myLinkedList = new MyLinkedList();
         myLinkedList.addLast(23);
