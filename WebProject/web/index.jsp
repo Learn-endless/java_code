@@ -11,6 +11,10 @@
     <title>$Title$</title>
   </head>
   <body>
-  hello web application!
+  <form method="post">
+    用户：<input type="text" name="username"><br>
+    密码：<input type="password" name="psw"><br>
+    <input type="submit" value="登录">
+  </form>
   </body>
 </html>
