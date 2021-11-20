@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+    window.onload = function (){
+        const checkImg = document.getElementById("checkImg");
+        checkImg.onclick = function (){
+            const date = new Date();
+            const time = date.getTime();
+            this.src = "/WebProject/check?"+time;
+        }
+    }
+
+</script>
+</head>
+<body>
+    <img id="checkImg" src="/WebProject/check">
+</body>
+</html>
