@@ -18,10 +18,26 @@
   </form>
   <!--
     servlet里面些什么，这里些什么
+    不用创建对象，可以直接使用的对象就是内置对象
+    jsp中一共有9个内置对象
+
+    其中三个：
+          req，resp，out
+    输出虚拟目录
    -->
   <%
     System.out.println("hello world!");
+    request.getContextPath();
 
+  %>
+  <%
+    request.setAttribute("msg","hello");
+  %>
+  <%
+    request.getContextPath();
+  %>
+  <%
+    request.getAttribute("msg");
   %>
   <!--
     写在成员变量位置

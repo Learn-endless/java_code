@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -16,11 +17,6 @@ import java.util.Random;
 public class CheckCode extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        this.doPost(req,resp);
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int w = 100;
         int h = 50;
         //内存创建图片对象
@@ -34,13 +30,16 @@ public class CheckCode extends HttpServlet {
 
         String str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
         Random rm = new Random();
-
-        for (int i = 1; i < 4; i++) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 1; i <= 4; i++) {
             int index = rm.nextInt(str.length());
             char ch = str.charAt(index);
+            sb.append(ch);
             g.drawString(ch+"",w/5*i,h/2);
         }
-
+        HttpSession session = req.getSession();
+        String ee = new String(sb);
+        session.setAttribute("code_session",ee);
         //画干扰线
         g.setColor(Color.GREEN);
 
@@ -65,5 +64,10 @@ public class CheckCode extends HttpServlet {
         ServletOutputStream output = resp.getOutputStream();
 
         ImageIO.write(img,"jpg",output);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+       doGet(req,resp);
     }
 }
