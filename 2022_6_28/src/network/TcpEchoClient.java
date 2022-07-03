@@ -40,4 +40,9 @@ public class TcpEchoClient {
             e.printStackTrace();
         }
     }
+
+    public static void main(String[] args) throws IOException {
+        TcpEchoClient tcpEchoClient = new TcpEchoClient("127.0.0.1",9090);
+        tcpEchoClient.start();
+    }
 }
